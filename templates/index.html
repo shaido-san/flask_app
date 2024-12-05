@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI計算アプリ</title>
+    </head>
+    <body>
+        <h1>BMI計算アプリ</h1>
+        <form action="/calc" method="post">
+            
+            <label for="height">身長[cm]:</label>
+            <input type="number" name="height" value="{{ height|default('') }}">
+            <br>
+            <label for="weight">体重[kg]:</label>
+            <input type="number" name="weight" value="{{ weight|default('') }}">
+            <br>
+            <button type="submit">計算する</button>
+        </form>
+        <p></p>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </body>
+</html>
