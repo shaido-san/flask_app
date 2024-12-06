@@ -10,5 +10,6 @@ def calc():
     height=request.form["height"]
     weight=request.form["weight"]
     bmi=int(weight) / (int(height) / 100) ** 2
+    bmi=round(bmi,1)
     message = "あなたのBMIは" + str(bmi) + "です。"
     return render_template("index.html",height = height, weight = weight, message = message)
